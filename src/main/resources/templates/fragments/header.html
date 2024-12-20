@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<body>
+
+<header th:fragment="headerFragment"
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <div class="col-md-3 mb-2 mb-md-0">
+        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <h1>mangez_js</h1>
+        </a>
+    </div>
+
+    <div class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary me-2"  sec:authorize="isAnonymous()"><a href="/member/login"> Login</a></button>
+        <button type="button" class="btn btn-outline-primary me-2" sec:authorize="isAuthenticated()"><a href="/member/logout">Logout</a></button>
+    </div>
+</header>
+</body>
+</html>
